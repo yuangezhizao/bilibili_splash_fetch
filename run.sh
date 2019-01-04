@@ -1,6 +1,11 @@
 #!/bin/bash
 set -ev
 
+folder="json_data"
+if [ ! -d $folder ]; then
+  mkdir $folder
+fi
+
 python task_daily.py ${access_key}
 
 git config user.name "yuangezhizao"
