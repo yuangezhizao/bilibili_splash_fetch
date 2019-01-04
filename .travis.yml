@@ -1,0 +1,23 @@
+language: python
+
+python:
+  - 3.7
+
+cache:
+  directories:
+    - $HOME/.cache/pip
+
+dist: xenial # https://github.com/travis-ci/travis-ci/issues/9815#issuecomment-401756442
+
+sudo: true
+
+before_install:
+  - export TZ='Asia/Shanghai'
+  - chmod +x ./run.sh
+
+install:
+  - pip install pipenv
+  - pipenv install
+
+script:
+  - ./run.sh
