@@ -8,10 +8,14 @@ fi
 
 python task_daily.py ${access_key}
 
+cd ..
+git clone "https://github.com/yuangezhizao/bilibili_splash_fetch_raw_data.git" bilibili_splash_fetch_raw_data
+cp -r bilibili_splash_fetch/json_data/. bilibili_splash_fetch_raw_data
+
 git config user.name "yuangezhizao"
 git config user.email "root@yuangezhizao.cn"
 
 git checkout master
 git add .
 git commit -m "Travis CI Cron Jobs at `date +"%Y-%m-%d %H:%M:%S"`"
-git push --force "https://${TravisCIToken}@github.com/yuangezhizao/bilibili_splash_fetch.git" master:master
+git push --force --quiet "https://${TravisCIToken}@github.com/yuangezhizao/bilibili_splash_fetch_raw_data.git"
