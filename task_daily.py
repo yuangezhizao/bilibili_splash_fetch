@@ -24,7 +24,7 @@ def bilibili_splash_fetch(access_key):
     params = temp_params + '&sign=' + sign
     r = requests.get(url, headers=headers, params=params)
     r.json()['cache_time'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    json_file_name = datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + '.json'
+    json_file_name = datetime.datetime.now().strftime("%y%m%d-%H%M%S") + '.json'
     with open('./json_data/' + json_file_name, 'w', encoding='utf-8') as f:
         json.dump(r.json(), f)
 
