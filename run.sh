@@ -1,4 +1,6 @@
 #!/bin/bash
+source /etc/profile
+
 set -ev
 export TZ='Asia/Shanghai'
 
