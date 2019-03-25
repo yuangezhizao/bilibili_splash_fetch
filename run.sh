@@ -10,7 +10,7 @@ if [[ ! -d ${folder} ]]; then
   mkdir ${folder}
 fi
 
-python task_daily.py ${access_key}
+python3 task_daily.py ${access_key}
 
 cd ..
 folder="bilibili_splash_fetch_data"
@@ -32,7 +32,7 @@ cd ..
 
 cp -r bilibili_splash_fetch/json_data/. bilibili_splash_fetch_data/raw
 cd bilibili_splash_fetch
-python hourly.py
+python3 hourly.py
 cd ../bilibili_splash_fetch_data
 
 git config user.name "yuangezhizao"
