@@ -1,4 +1,6 @@
 #!/bin/bash
+source /etc/profile
+
 set -ev
 export TZ='Asia/Shanghai'
 
@@ -35,8 +37,8 @@ cd bilibili_splash_fetch
 python3 hourly.py
 cd ../bilibili_splash_fetch_data
 
-git config user.name "yuangezhizao"
-git config user.email "root@yuangezhizao.cn"
+git config user.name "yuangezhizao-serveraccount"
+git config user.email "yuangezhizao@gmail.com"
 
 git add .
 git commit -m "CentOS Server Cron Jobs at `date +"%Y-%m-%d %H:%M:%S"`"
